@@ -1,4 +1,5 @@
 import React from 'react';
+import HistoryBar from '../containers/History.js';
 
 const Header = () => (
   <header>
@@ -16,6 +17,7 @@ export default function App() {
   return (
     <React.Fragment>
       <Header />
+      <HistoryBar />
       <Footer />
     </React.Fragment>);
 }

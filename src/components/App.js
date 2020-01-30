@@ -1,6 +1,11 @@
 import React from 'react';
 
+const Header = () => (
+  <header>
+    <h1>RESTy</h1>
+  </header>
+);
+
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <Header />;
 }
-  

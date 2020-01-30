@@ -6,6 +6,16 @@ const Header = () => (
   </header>
 );
 
+const Footer = () => (
+  <footer>
+    <p>2020 Alchemy Code Lab</p>
+  </footer>
+);
+
 export default function App() {
-  return <Header />;
+  return (
+    <React.Fragment>
+      <Header />
+      <Footer />
+    </React.Fragment>);
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import HistoryBar from '../containers/History.js';
+import HistoryBar from '../containers/HistoryBar';
 
 const Header = () => (
   <header>

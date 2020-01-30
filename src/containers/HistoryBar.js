@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import History from '../components/History';
+import History from '../components/history/History';
 
 
 export default class HistoryBar extends Component {

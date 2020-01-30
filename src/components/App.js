@@ -1,5 +1,6 @@
 import React from 'react';
 import HistoryBar from '../containers/HistoryBar';
+import RestBody from '../containers/RestBody';
 
 const Header = () => (
   <header>
@@ -18,6 +19,7 @@ export default function App() {
     <React.Fragment>
       <Header />
       <HistoryBar />
+      <RestBody />
       <Footer />
     </React.Fragment>);
 }

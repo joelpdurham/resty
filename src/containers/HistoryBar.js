@@ -3,13 +3,16 @@ import History from '../components/history/History';
 
 
 export default class HistoryBar extends Component {
-  state = {}
+  state = {
+    history: ['one', 'two', 'three']
+  }
 
   render() {
+    const { history } = this.state;
     return (
       <>
         <h2>History</h2>
-        <History history={ ['One', 'Two', 'Three']}/>
+        <History history={history}/>
       </>
     );
   }

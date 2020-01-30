@@ -9,7 +9,7 @@ export default class HistoryBar extends Component {
     return (
       <>
         <h2>History</h2>
-        <History />
+        <History history={ ['One', 'Two', 'Three']}/>
       </>
     );
   }

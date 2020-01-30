@@ -1,5 +1,5 @@
 import React from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import HistoryItem from './HistoryItem';
 
 const History = ({ history }) => {
@@ -17,7 +17,7 @@ const History = ({ history }) => {
 };
 
 History.propTypes = {
-  history: propTypes.array.isRequired
+  history: PropTypes.array.isRequired
 };
 
 export default History;

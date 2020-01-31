@@ -4,7 +4,7 @@ import History from '../components/history/History';
 
 export default class HistoryBar extends Component {
   state = {
-    history: ['one', 'two', 'three']
+    history: []
   }
 
   render() {

@@ -5,11 +5,7 @@ const fetchMyStuff = (url, route) => {
       'Content-Type': 'application/json'
     }
   })
-    .then(res => res.json())
-    .then(res => {
-      console.log(res);
-      return res;
-    });
+    .then(res => res.json());
 };
 
 export default fetchMyStuff;

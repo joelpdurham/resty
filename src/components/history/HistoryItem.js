@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const HistoryItem = ({ historyItem }) => (
   <section>
-    <h2>{historyItem}</h2>
+    <button>{historyItem}</button>
   </section>
 );
 

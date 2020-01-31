@@ -5,11 +5,11 @@ const RestForm = ({ url, rawJsonBody, username, password, token, onChange, onSub
   <form onSubmit={onSubmit}>
     <input type="text" name="url" value={url} onChange={onChange} placeholder="URL"/>
     <section>
-      <input type="radio" name="route" value="GET" />
-      <input type="radio" name="route" value="POST" />
-      <input type="radio" name="route" value="PUT" />
-      <input type="radio" name="route" value="PATCH" />
-      <input type="radio" name="route" value="DELETE" />
+      <input type="radio" name="route" value="GET" /> GET
+      <input type="radio" name="route" value="POST" /> POST
+      <input type="radio" name="route" value="PUT" /> PUT
+      <input type="radio" name="route" value="PATCH" /> PATCH
+      <input type="radio" name="route" value="DELETE" /> DELETE
     </section>
     <button>Go!</button>
 

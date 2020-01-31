@@ -22,11 +22,11 @@ export default class RestBody extends Component {
   handleSumbit = (event) => {
     event.preventDefault();
     const { url, route } = event.target;
+    if(!url.value || !route.value) return;
 
     this.setState(state => ({
       history: [url.value, ...state.history]
     }));
-
 
     handleFetch(url.value, route.value)
       .then(data => {
@@ -40,7 +40,7 @@ export default class RestBody extends Component {
     const { url, rawJsonBody, username, password, token, history, response } = this.state;
     return (
       <>
-        <History history={history}/>
+        <History history={history} />
         <RestForm 
           url={url}
           rawJsonBody={rawJsonBody}

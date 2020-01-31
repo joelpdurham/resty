@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RestForm from '../components/form/RestForm';
+import fetchMyStuff from '../services/fetchMyStuff';
 
 export default class RestBody extends Component {
   state = {
@@ -14,6 +15,17 @@ export default class RestBody extends Component {
     this.setState({ [target.name]: target.value });
   }
 
+  handleSumbit = (event) => {
+    event.preventDefault();
+
+    const { url, route } = event.target;
+
+    console.log(url.value);
+    console.log(route.value);
+
+    fetchMyStuff(url.value, route.value);
+  }
+
   render() {
     const { url, rawJsonBody, username, password, token } = this.state;
     return (
@@ -25,6 +37,7 @@ export default class RestBody extends Component {
           password={password}
           token={token}
           onChange={this.handleChange}
+          onSubmit={this.handleSumbit}
         />
       </>
     );

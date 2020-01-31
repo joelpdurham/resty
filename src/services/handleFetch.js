@@ -1,4 +1,4 @@
-const fetchMyStuff = (url, route) => {
+const handleFetch = (url, route) => {
   return fetch(url, {
     method: route,
     headers: {
@@ -7,5 +7,5 @@ const fetchMyStuff = (url, route) => {
   })
     .then(res => res.json());
 };
-
-export default fetchMyStuff;
+ 
+export default handleFetch;

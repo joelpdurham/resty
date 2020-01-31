@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import RestForm from '../components/form/RestForm';
-import fetchMyStuff from '../services/fetchMyStuff';
+import handleFetch from '../services/handleFetch';
 import History from '../components/history/History';
 
 export default class RestBody extends Component {
@@ -22,7 +22,7 @@ export default class RestBody extends Component {
 
     const { url, route } = event.target;
 
-    fetchMyStuff(url.value, route.value)
+    handleFetch(url.value, route.value)
       .then(data => {
         this.setState(state => ({
           history: [...state.history, data.name]

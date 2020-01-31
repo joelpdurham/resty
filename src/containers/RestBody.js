@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import RestForm from '../components/form/RestForm';
-import handleFetch from '../services/handleFetch';
+import RestForm from '../components/RestForm';
 import History from '../components/history/History';
+import Response from '../components/Response';
+import handleFetch from '../services/handleFetch';
 
 export default class RestBody extends Component {
   state = {
     history: [],
+    response: '',
     url: '',
     rawJsonBody: '',
     username: '',
@@ -19,19 +21,23 @@ export default class RestBody extends Component {
 
   handleSumbit = (event) => {
     event.preventDefault();
-
     const { url, route } = event.target;
+
+    this.setState(state => ({
+      history: [url.value, ...state.history]
+    }));
+
 
     handleFetch(url.value, route.value)
       .then(data => {
         this.setState(state => ({
-          history: [...state.history, data.name]
+          response: JSON.stringify(data)
         }));
       });
   }
 
   render() {
-    const { url, rawJsonBody, username, password, token, history } = this.state;
+    const { url, rawJsonBody, username, password, token, history, response } = this.state;
     return (
       <>
         <History history={history}/>
@@ -44,6 +50,7 @@ export default class RestBody extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSumbit}
         />
+        <Response response={response} />
       </>
     );
   }

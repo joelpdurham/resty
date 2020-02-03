@@ -19,13 +19,17 @@ export default class RestBody extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  handleSumbit = (event) => {
+  handleSubmit = (event) => {
     event.preventDefault();
     const { url, route } = event.target;
     if(!url.value || !route.value) return;
 
     this.setState(state => ({
-      history: [url.value, ...state.history]
+      history: [{ 
+        url: url.value,
+        route: route.value
+      }, 
+      ...state.history]
     }));
 
     handleFetch(url.value, route.value)
@@ -40,7 +44,7 @@ export default class RestBody extends Component {
     const { url, rawJsonBody, username, password, token, history, response } = this.state;
     return (
       <>
-        <History history={history} />
+        <History history={history} onSubmit={this.handleSubmit}/>
         <RestForm 
           url={url}
           rawJsonBody={rawJsonBody}
@@ -48,7 +52,7 @@ export default class RestBody extends Component {
           password={password}
           token={token}
           onChange={this.handleChange}
-          onSubmit={this.handleSumbit}
+          onSubmit={this.handleSubmit}
         />
         <Response response={response} />
       </>

@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const HistoryItem = ({ historyItem }) => (
-  <section>
-    <button>{historyItem}</button>
-  </section>
+const HistoryItem = ({ url, route, onSubmit }) => (
+  <form onSubmit={onSubmit}>
+    <p name="url" value={url}>URL: {url}</p>
+    <p name="route" value={route}>Route: {route}</p>
+    <button>Do Again!</button>
+  </form>
 );
 
 HistoryItem.propTypes = {
-  historyItem: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired,
+  route: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default HistoryItem;
